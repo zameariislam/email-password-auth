@@ -11,11 +11,11 @@ const App = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const handleEmailChange = (e) => {
+  const handleEmailBlur = (e) => {
     setEmail(e.target.value)
 
   }
-  const handlePasswordChange = (e) => {
+  const handlePasswordBlur = (e) => {
     setPassword(e.target.value)
   }
 
@@ -28,17 +28,18 @@ const App = () => {
      
 
   return (
-    <div className="w-50 mx-auto">
+    <div className="w-50 mx-auto mt-2">
+      <h2 className="text-primary">Please Register</h2>
       <Form onSubmit={handleFormSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
-        <Form.Control onBlur={handleEmailChange} type="email" placeholder="Enter email" />
+        <Form.Control onBlur={handleEmailBlur} type="email" placeholder="Enter email" />
         
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control onBlur={handlePasswordChange} type="password" placeholder="Password" />
+        <Form.Control onBlur={handlePasswordBlur} type="password" placeholder="Password" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
